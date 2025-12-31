@@ -19,7 +19,7 @@ function FeatureCard({ icon: Icon, title, description }: { icon: any, title: str
                 <Icon className="w-6 h-6 text-white" />
             </div>
             <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
-            <p className="text-white/60 text-sm">{description}</p>
+            <p className="text-white/80 text-sm">{description}</p>
         </div>
     )
 }
@@ -63,13 +63,13 @@ export default function LandingPage() {
     ]
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-slate-900 via-purple-900/20 to-slate-900">
+        <div className="min-h-screen bg-gradient-to-b from-slate-900 via-purple-900/40 to-slate-900">
             {/* Hero Section */}
             <header className="relative overflow-hidden">
                 {/* Background Effects */}
                 <div className="absolute inset-0">
-                    <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/30 rounded-full blur-3xl animate-pulse" />
-                    <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+                    <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-600/40 rounded-full blur-3xl animate-pulse" />
+                    <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-pink-600/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
                 </div>
 
                 {/* Navigation */}
@@ -105,7 +105,7 @@ export default function LandingPage() {
                         </span>
                     </h1>
 
-                    <p className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto mb-10">
+                    <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-10">
                         Stok yönetimi, muhasebe, fatura, CRM, insan kaynakları ve satış yönetimini
                         tek bir platformda birleştiren <strong className="text-white">ücretsiz bulut ERP sistemi</strong>.
                     </p>
@@ -125,7 +125,7 @@ export default function LandingPage() {
                     </div>
 
                     {/* Trust Badges */}
-                    <div className="flex flex-wrap items-center justify-center gap-6 mt-12 text-white/40 text-sm">
+                    <div className="flex flex-wrap items-center justify-center gap-6 mt-12 text-white/70 text-sm">
                         <div className="flex items-center gap-2">
                             <Shield className="w-4 h-4" />
                             <span>SSL Güvenlik</span>
@@ -148,7 +148,7 @@ export default function LandingPage() {
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                         Tüm Modüller Tek Platformda
                     </h2>
-                    <p className="text-white/60 max-w-2xl mx-auto">
+                    <p className="text-white/80 max-w-2xl mx-auto">
                         İşletmenizin tüm iş süreçlerini entegre edin
                     </p>
                 </div>
