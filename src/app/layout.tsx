@@ -29,6 +29,9 @@ export const metadata: Metadata = {
   authors: [{ name: 'floxe' }],
   creator: 'floxe',
   robots: { index: true, follow: true },
+  verification: {
+    google: 'l6TnizT8DWdtxpyp-zYVFjYPb9Nu1hXZ_Q3GLcqwdao',
+  },
   openGraph: {
     type: 'website',
     locale: 'tr_TR',
