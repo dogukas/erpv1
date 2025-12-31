@@ -29,8 +29,12 @@ export default function ClientLayout({
     const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false)
     const pathname = usePathname()
 
-    // Hide layout on login and signup pages
-    const isAuthPage = pathname?.startsWith('/login') || pathname?.startsWith('/signup')
+    // Hide layout on landing, login, signup and password pages
+    const isAuthPage = pathname === '/' ||
+        pathname?.startsWith('/login') ||
+        pathname?.startsWith('/signup') ||
+        pathname?.startsWith('/forgot-password') ||
+        pathname?.startsWith('/reset-password')
 
     if (isAuthPage) {
         return (
