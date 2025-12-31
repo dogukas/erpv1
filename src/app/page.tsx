@@ -14,7 +14,7 @@ import {
 // Özellik kartı
 function FeatureCard({ icon: Icon, title, description }: { icon: any, title: string, description: string }) {
     return (
-        <div className="group p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-purple-500/50 transition-all hover:bg-white/10">
+        <div className="group p-6 rounded-2xl bg-slate-900/80 border border-white/10 hover:border-purple-500/50 transition-all hover:bg-slate-800/80">
             <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <Icon className="w-6 h-6 text-white" />
             </div>
@@ -161,9 +161,9 @@ export default function LandingPage() {
             </section>
 
             {/* Pricing CTA */}
-            <section className="px-6 py-16 bg-white/5">
+            <section className="px-6 py-16 bg-slate-900/50">
                 <div className="max-w-4xl mx-auto text-center">
-                    <div className="inline-block bg-white/10 rounded-3xl p-8 border border-white/20">
+                    <div className="inline-block bg-slate-900/80 rounded-3xl p-8 border border-white/20">
                         <div className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-2">
                             ₺0
                         </div>
