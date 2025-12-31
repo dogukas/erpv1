@@ -49,15 +49,23 @@ export default function NewEmployeePage() {
                 throw new Error('Şirket bilgisi bulunamadı.')
             }
 
+            // Ad Soyad'ı ayır
+            const fullName = formData.name.trim()
+            const lastSpaceIndex = fullName.lastIndexOf(' ')
+            const firstName = lastSpaceIndex > -1 ? fullName.substring(0, lastSpaceIndex) : fullName
+            const lastName = lastSpaceIndex > -1 ? fullName.substring(lastSpaceIndex + 1) : ''
+
             const { error } = await supabase.from('employees').insert({
                 company_id: userCompany.company_id,
                 employee_number: formData.employee_number,
-                name: formData.name,
+                first_name: firstName,
+                last_name: lastName || '-', // Soyad zorunluysa tire koy
                 email: formData.email,
                 phone: formData.phone,
-                position: formData.position,
+                // position_id: null, 
+                position: formData.position, // Schema'da text kolonu var
                 hire_date: formData.hire_date,
-                salary: parseFloat(formData.salary) || null,
+                salary: parseFloat(formData.salary) || null, // Schema'da numeric kolonu var
             })
 
             if (error) throw error

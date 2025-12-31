@@ -54,7 +54,7 @@ export default function EditTimesheetPage() {
 
                 // Fetch timesheet entry
                 const { data, error } = await supabase
-                    .from('timesheet')
+                    .from('time_entries')
                     .select('*')
                     .eq('id', id)
                     .single()
@@ -64,7 +64,7 @@ export default function EditTimesheetPage() {
                     setFormData({
                         project_id: data.project_id || '',
                         task_id: data.task_id || '',
-                        work_date: data.work_date,
+                        work_date: data.entry_date,
                         hours: data.hours.toString(),
                         description: data.description || '',
                     })
@@ -85,11 +85,11 @@ export default function EditTimesheetPage() {
 
         try {
             const { error } = await supabase
-                .from('timesheet')
+                .from('time_entries')
                 .update({
                     project_id: formData.project_id || null,
                     task_id: formData.task_id || null,
-                    work_date: formData.work_date,
+                    entry_date: formData.work_date,
                     hours: parseFloat(formData.hours),
                     description: formData.description,
                 })

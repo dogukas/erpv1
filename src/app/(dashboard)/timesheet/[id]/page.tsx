@@ -26,7 +26,7 @@ export default function TimesheetDetailPage() {
             if (!id) return
             try {
                 const { data, error } = await supabase
-                    .from('timesheet')
+                    .from('time_entries')
                     .select('*')
                     .eq('id', id)
                     .single()
@@ -76,7 +76,7 @@ export default function TimesheetDetailPage() {
                         </Link>
                     </Button>
                     <div>
-                        <h1 className="text-3xl font-bold">{formatDate(entry.work_date)}</h1>
+                        <h1 className="text-3xl font-bold">{formatDate(entry.entry_date)}</h1>
                         <p className="text-gray-500">{employeeName}</p>
                     </div>
                 </div>

@@ -47,10 +47,21 @@ export default function NewRequisitionPage() {
                 throw new Error('Şirket bilgisi bulunamadı.')
             }
 
+            // Kullanıcıya bağlı çalışanı bul (requested_by = employee.id olmalı)
+            const { data: employee, error: empError } = await supabase
+                .from('employees')
+                .select('id')
+                .eq('user_id', user.id)
+                .single()
+
+            if (empError || !employee) {
+                throw new Error('Bu kullanıcıya bağlı çalışan kaydı bulunamadı. Önce İK modülünden çalışan oluşturmalısınız.')
+            }
+
             const { error } = await supabase.from('purchase_requisitions').insert({
                 company_id: userCompany.company_id,
                 requisition_number: formData.requisition_number,
-                requester_id: user.id, // Assuming current user is requester
+                requested_by: employee.id, // Artık employee.id gönderiyoruz
                 request_date: formData.request_date,
                 required_date: formData.required_date || null,
                 status: formData.status,

@@ -9,9 +9,9 @@ async function getTimesheet() {
     const supabase = await createClient()
 
     const { data: timesheet, error } = await supabase
-        .from('timesheet')
+        .from('time_entries')
         .select('*')
-        .order('work_date', { ascending: false })
+        .order('entry_date', { ascending: false })
         .limit(20)
 
     if (error) {
@@ -59,7 +59,7 @@ export default async function TimesheetPage() {
                                         <div>
                                             <p className="font-medium">
                                                 <Link href={`/timesheet/${entry.id}`} className="hover:underline text-cyan-600">
-                                                    {formatDate(entry.work_date)}
+                                                    {formatDate(entry.entry_date)}
                                                 </Link>
                                             </p>
                                             <p className="text-sm text-gray-600">

@@ -58,7 +58,7 @@ export default function NewCustomerPage() {
                 email: formData.email,
                 phone: formData.phone,
                 address: formData.address,
-                tax_number: formData.tax_number,
+                tax_id: formData.tax_number, // Şemada tax_id
                 tax_office: formData.tax_office,
             })
 

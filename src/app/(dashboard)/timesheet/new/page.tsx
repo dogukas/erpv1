@@ -73,12 +73,24 @@ export default function NewTimesheetPage() {
                 throw new Error('Şirket bilgisi bulunamadı.')
             }
 
-            const { error } = await supabase.from('timesheet').insert({
+            // Kullanıcıya bağlı çalışanı bul
+            const { data: employee, error: empError } = await supabase
+                .from('employees')
+                .select('id')
+                .eq('user_id', user.id)
+                .single()
+
+            if (empError || !employee) {
+                throw new Error('Bu kullanıcıya bağlı çalışan kaydı bulunamadı.')
+            }
+
+            // Tablo adı: time_entries (schema'da timesheet değil)
+            const { error } = await supabase.from('time_entries').insert({
                 company_id: userCompany.company_id,
-                employee_id: user.id, // Assuming current user is the employee
+                employee_id: employee.id,
                 project_id: formData.project_id || null,
                 task_id: formData.task_id || null,
-                work_date: formData.work_date,
+                entry_date: formData.work_date,
                 hours: parseFloat(formData.hours),
                 description: formData.description,
             })
