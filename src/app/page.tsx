@@ -95,7 +95,7 @@ export default function LandingPage() {
                 <div className="relative z-10 text-center px-6 py-16 md:py-24 max-w-5xl mx-auto">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 text-sm mb-8">
                         <Zap className="w-4 h-4" />
-                        %100 Ücretsiz • Kredi Kartı Gerekmez
+                        İlk 30 Gün Ücretsiz • Kredi Kartı Gerekmez
                     </div>
 
                     <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight">
@@ -160,24 +160,131 @@ export default function LandingPage() {
                 </div>
             </section>
 
-            {/* Pricing CTA */}
-            <section className="px-6 py-16 bg-slate-900/50">
-                <div className="max-w-4xl mx-auto text-center">
-                    <div className="inline-block bg-slate-900/80 rounded-3xl p-8 border border-white/20">
-                        <div className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-2">
-                            ₺0
+            {/* Pricing Section */}
+            <section id="pricing" className="px-6 py-20 bg-slate-900/50">
+                <div className="max-w-7xl mx-auto">
+                    <div className="text-center mb-16">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-sm mb-6">
+                            <Zap className="w-4 h-4" />
+                            İlk Ay Ücretsiz Deneyin!
                         </div>
-                        <div className="text-white/60 mb-6">Sonsuza kadar ücretsiz</div>
-                        <div className="flex flex-wrap justify-center gap-4 text-white/80 text-sm mb-8">
-                            <span className="flex items-center gap-1"><CheckCircle className="w-4 h-4 text-emerald-400" /> Tüm modüller</span>
-                            <span className="flex items-center gap-1"><CheckCircle className="w-4 h-4 text-emerald-400" /> Sınırsız kayıt</span>
-                            <span className="flex items-center gap-1"><CheckCircle className="w-4 h-4 text-emerald-400" /> Sınırsız kullanıcı</span>
+                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+                            Uygun Fiyatlı Planlar
+                        </h2>
+                        <p className="text-white/80 max-w-2xl mx-auto">
+                            İşletmenizin büyüklüğüne göre esnek fiyatlandırma. Kredi kartı gerekmez, 30 gün ücretsiz deneyin.
+                        </p>
+                    </div>
+
+                    <div className="grid md:grid-cols-3 gap-8">
+                        {/* Starter Plan */}
+                        <div className="group relative bg-slate-900/80 rounded-3xl p-8 border border-white/10 hover:border-purple-500/50 transition-all hover:scale-105">
+                            <div className="text-lg font-semibold text-white mb-2">Başlangıç</div>
+                            <div className="text-white/60 text-sm mb-6">Küçük işletmeler için</div>
+                            <div className="flex items-end gap-1 mb-6">
+                                <span className="text-4xl font-black text-white">₺199</span>
+                                <span className="text-white/60 mb-1">/ay</span>
+                            </div>
+                            <ul className="space-y-3 mb-8">
+                                <li className="flex items-center gap-2 text-white/80 text-sm">
+                                    <CheckCircle className="w-4 h-4 text-emerald-400" /> 3 Kullanıcı
+                                </li>
+                                <li className="flex items-center gap-2 text-white/80 text-sm">
+                                    <CheckCircle className="w-4 h-4 text-emerald-400" /> 1.000 Ürün
+                                </li>
+                                <li className="flex items-center gap-2 text-white/80 text-sm">
+                                    <CheckCircle className="w-4 h-4 text-emerald-400" /> Stok Yönetimi
+                                </li>
+                                <li className="flex items-center gap-2 text-white/80 text-sm">
+                                    <CheckCircle className="w-4 h-4 text-emerald-400" /> Fatura Modülü
+                                </li>
+                                <li className="flex items-center gap-2 text-white/80 text-sm">
+                                    <CheckCircle className="w-4 h-4 text-emerald-400" /> E-posta Desteği
+                                </li>
+                            </ul>
+                            <Link href="/signup" className="block">
+                                <Button className="w-full bg-white/10 hover:bg-white/20 text-white border border-white/20">
+                                    30 Gün Ücretsiz Dene
+                                </Button>
+                            </Link>
                         </div>
-                        <Link href="/signup">
-                            <Button size="lg" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 px-12">
-                                Ücretsiz Hesap Oluştur
-                            </Button>
-                        </Link>
+
+                        {/* Pro Plan - Popular */}
+                        <div className="group relative bg-gradient-to-b from-purple-900/50 to-slate-900/80 rounded-3xl p-8 border-2 border-purple-500/50 hover:border-purple-400 transition-all scale-105 hover:scale-110 shadow-2xl shadow-purple-500/20">
+                            <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-white text-sm font-semibold">
+                                En Popüler
+                            </div>
+                            <div className="text-lg font-semibold text-white mb-2">Profesyonel</div>
+                            <div className="text-white/60 text-sm mb-6">Büyüyen işletmeler için</div>
+                            <div className="flex items-end gap-1 mb-6">
+                                <span className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">₺499</span>
+                                <span className="text-white/60 mb-1">/ay</span>
+                            </div>
+                            <ul className="space-y-3 mb-8">
+                                <li className="flex items-center gap-2 text-white/80 text-sm">
+                                    <CheckCircle className="w-4 h-4 text-emerald-400" /> 10 Kullanıcı
+                                </li>
+                                <li className="flex items-center gap-2 text-white/80 text-sm">
+                                    <CheckCircle className="w-4 h-4 text-emerald-400" /> Sınırsız Ürün
+                                </li>
+                                <li className="flex items-center gap-2 text-white/80 text-sm">
+                                    <CheckCircle className="w-4 h-4 text-emerald-400" /> Tüm Modüller
+                                </li>
+                                <li className="flex items-center gap-2 text-white/80 text-sm">
+                                    <CheckCircle className="w-4 h-4 text-emerald-400" /> CRM & İK Yönetimi
+                                </li>
+                                <li className="flex items-center gap-2 text-white/80 text-sm">
+                                    <CheckCircle className="w-4 h-4 text-emerald-400" /> Öncelikli Destek
+                                </li>
+                                <li className="flex items-center gap-2 text-white/80 text-sm">
+                                    <CheckCircle className="w-4 h-4 text-emerald-400" /> Raporlama & Analitik
+                                </li>
+                            </ul>
+                            <Link href="/signup" className="block">
+                                <Button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white shadow-lg">
+                                    30 Gün Ücretsiz Dene
+                                </Button>
+                            </Link>
+                        </div>
+
+                        {/* Enterprise Plan */}
+                        <div className="group relative bg-slate-900/80 rounded-3xl p-8 border border-white/10 hover:border-cyan-500/50 transition-all hover:scale-105">
+                            <div className="text-lg font-semibold text-white mb-2">Kurumsal</div>
+                            <div className="text-white/60 text-sm mb-6">Büyük şirketler için</div>
+                            <div className="flex items-end gap-1 mb-6">
+                                <span className="text-4xl font-black text-white">₺999</span>
+                                <span className="text-white/60 mb-1">/ay</span>
+                            </div>
+                            <ul className="space-y-3 mb-8">
+                                <li className="flex items-center gap-2 text-white/80 text-sm">
+                                    <CheckCircle className="w-4 h-4 text-emerald-400" /> Sınırsız Kullanıcı
+                                </li>
+                                <li className="flex items-center gap-2 text-white/80 text-sm">
+                                    <CheckCircle className="w-4 h-4 text-emerald-400" /> Sınırsız Her Şey
+                                </li>
+                                <li className="flex items-center gap-2 text-white/80 text-sm">
+                                    <CheckCircle className="w-4 h-4 text-emerald-400" /> API Erişimi
+                                </li>
+                                <li className="flex items-center gap-2 text-white/80 text-sm">
+                                    <CheckCircle className="w-4 h-4 text-emerald-400" /> Özel Entegrasyonlar
+                                </li>
+                                <li className="flex items-center gap-2 text-white/80 text-sm">
+                                    <CheckCircle className="w-4 h-4 text-emerald-400" /> 7/24 VIP Destek
+                                </li>
+                                <li className="flex items-center gap-2 text-white/80 text-sm">
+                                    <CheckCircle className="w-4 h-4 text-emerald-400" /> Eğitim & Kurulum
+                                </li>
+                            </ul>
+                            <Link href="/signup" className="block">
+                                <Button className="w-full bg-white/10 hover:bg-white/20 text-white border border-white/20">
+                                    30 Gün Ücretsiz Dene
+                                </Button>
+                            </Link>
+                        </div>
+                    </div>
+
+                    <div className="text-center mt-12 text-white/60 text-sm">
+                        Tüm planlar <strong className="text-emerald-400">30 gün ücretsiz deneme</strong> ile başlar. İstediğiniz zaman iptal edebilirsiniz.
                     </div>
                 </div>
             </section>
