@@ -1,0 +1,19 @@
+--- DIAGNOSTIC START ---
+Timestamp: 2025-12-27T22:24:23.785Z
+
+[1] Calling get_dashboard_stats RPC...
+RPC Result: {
+  "products": 4,
+  "customers": 2,
+  "orders": 2,
+  "revenue": 10027558
+}
+
+[2] Fetching confirmed orders manually...
+Found 0 confirmed orders:
+Manual Sum: 0
+
+❌ FAIL: RPC does NOT match Manual Sum.
+
+[3] Pending Orders Sum: 0 (Should NOT be in revenue)
+--- DIAGNOSTIC END ---
