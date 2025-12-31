@@ -36,7 +36,7 @@ import {
 const menuItems = [
     {
         title: 'Genel Özet',
-        href: '/genel-ozet',
+        href: '/',
         icon: LayoutDashboard,
     },
     {
