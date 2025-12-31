@@ -33,6 +33,7 @@ export async function middleware(request: NextRequest) {
 
     // Redirect to login if not authenticated and trying to access protected routes
     const isPublicRoute =
+        request.nextUrl.pathname === '/' ||
         request.nextUrl.pathname.startsWith('/login') ||
         request.nextUrl.pathname.startsWith('/signup') ||
         request.nextUrl.pathname.startsWith('/forgot-password') ||
