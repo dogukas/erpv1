@@ -35,6 +35,11 @@ import {
 
 const menuItems = [
     {
+        title: 'Genel Özet',
+        href: '/',
+        icon: LayoutDashboard,
+    },
+    {
         title: 'Envanter',
         icon: Package,
         children: [
